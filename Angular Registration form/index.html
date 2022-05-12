@@ -1,0 +1,45 @@
+<!doctype html>
+<html ng-app="todoApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="reg.js"></script>
+    <link rel="stylesheet" href="reg.css">
+  </head>
+  <body>
+    <h2>Registration Form</h2>
+    <div ng-controller="RegController as regUsers">
+      <form ng-submit="regUsers.addUser()">
+        <input type="text" ng-model="regUsers.firstName"  size="30"
+               placeholder="First Name">
+        <input type="text" ng-model="regUsers.lastName"  size="30"
+               placeholder="Last Name">
+        <input type="number" ng-model="regUsers.phoneNumber"  size="10"
+               placeholder="Mobile Number">
+        <input type="email" ng-model="regUsers.email"  size="30"
+               placeholder="Email">
+        <input type="password" ng-model="regUsers.password"  size="30"
+               placeholder="Password">
+        <input class="btn-primary" type="submit" value="add">
+      </form>
+      
+      <table>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Mobile Number</th>
+          <th>Email Id</th>
+          <th>Password</th>
+        </tr>
+        <tr ng-repeat="user in regUsers.user">
+          <td>{{user.firstName}}</td>
+          <td>{{user.lastName}}</td>
+          <td>{{user.phoneNumber}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.password}}</td>
+        </tr>
+      </table>
+      
+      
+    </div>
+  </body>
+</html>

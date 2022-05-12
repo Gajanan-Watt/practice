@@ -1,0 +1,11 @@
+.App {
+  font-family: sans-serif;
+  margin: auto;
+}
+.navbar{
+  display: flex;
+  justify-content: space-around;
+}
+.navbar Link h2{
+  text-decoration: none;
+}
